@@ -15,6 +15,7 @@ export default class BooksPresenter {
       name: bookVm.name,
       author: bookVm.author,
     };
-    await booksRepository.addBook(bookPm);
+    const response = await booksRepository.addBook(bookPm);
+    return response;
   };
 }

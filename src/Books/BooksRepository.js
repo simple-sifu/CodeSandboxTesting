@@ -3,7 +3,7 @@ import Observable from "../Shared/Observable";
 
 class BooksRepository {
   programmersModel = null;
-  apiUrl = "https://api.logicroom.co/api/pete@logicroom.co/";
+  apiUrl = "https://api.logicroom.co/api/tommy.han.cs@gmail.com/";
 
   constructor() {
     this.programmersModel = new Observable([]);
@@ -27,6 +27,7 @@ class BooksRepository {
     } else {
       console.log("BooksRepository.addBook failed to add a book");
     }
+    return response;
   };
 
   loadApiData = async () => {
