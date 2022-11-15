@@ -59,8 +59,9 @@ it("should confirm that we can load 1 book and hit backend", async () => {
   let booksPresenter = new BooksPresenter();
   const response = await booksPresenter.addBook(requestBodyDto);
 
-  expect(httpGateway.get).toHaveBeenCalledWith(
-    "https://api.logicroom.co/api/tommy.han.cs@gmail.com/books"
+  expect(httpGateway.post).toHaveBeenCalledWith(
+    "https://api.logicroom.co/api/tommy.han.cs@gmail.com/books",
+    requestBodyDto
   );
   expect(response.success).toBe(true);
   expect(response.result).toBe("book created");
