@@ -10,7 +10,7 @@ function App() {
 
   React.useEffect(() => {
     async function load() {
-      await booksPresenter.load(viewModel => {
+      await booksPresenter.load((viewModel) => {
         copyViewModelToStateViewModel(viewModel);
       });
     }
@@ -23,6 +23,15 @@ function App() {
       {stateViewModel.map((book, i) => {
         return <div key={i}>{book.name}</div>;
       })}
+      <h4>Add Books</h4>
+      <label></label>
+      <label for="name">name:</label>
+      <input type="text" id="name" />
+      <br />
+      <label for="book">book:</label>
+      <input type="text" id="book" />
+      <br />
+      <button>add book</button>
     </div>
   );
 }
